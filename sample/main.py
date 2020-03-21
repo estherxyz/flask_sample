@@ -24,7 +24,7 @@ def after_request(response):
 
 
 @app.route("/", methods=['GET','POST'])
-def test():
+def hello():
     """
     """
     str_msg = 'hello'
