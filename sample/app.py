@@ -8,7 +8,6 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-import config
 
 """
 Flask api sample.
@@ -16,7 +15,6 @@ Flask api sample.
 
 
 app = Flask(__name__)
-app.config.from_object('config.config.DevelopConfig')
 app.config.from_pyfile('config/develop.cfg')
 
 
