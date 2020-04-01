@@ -3,13 +3,10 @@ import datetime
 import time
 import json
 import requests
-import re, os
-
+import re
+import os
 from pathlib import Path
 from dotenv import load_dotenv
-env_path = Path('.') / 'env' / 'develop.env'
-print('env_path', env_path)
-load_dotenv(dotenv_path=env_path)
 
 import config
 
@@ -44,8 +41,16 @@ def hello():
 
 
 if __name__ == "__main__":
+    # set env variable
+    env_path = Path('.') / 'env' / 'develop.env'
+    print('env_path', env_path)
+    load_dotenv(dotenv_path=env_path)
+
+    # get env variable
     env1 = os.getenv("ENV1")
     print('ENV1', env1)
+
+    # run flask
     app.run(host='0.0.0.0', port=5000, debug=True)
 
 
