@@ -3,7 +3,15 @@ import datetime
 import time
 import json
 import requests
-import re
+import re, os
+
+from pathlib import Path
+from dotenv import load_dotenv
+env_path = Path('.') / 'env' / 'develop.env'
+print('env_path', env_path)
+load_dotenv(dotenv_path=env_path)
+
+import config
 
 """
 Flask api sample.
@@ -11,6 +19,8 @@ Flask api sample.
 
 
 app = Flask(__name__)
+app.config.from_object('config.config.DevelopConfig')
+app.config.from_pyfile('config/develop.cfg')
 
 
 @app.after_request
@@ -34,5 +44,8 @@ def hello():
 
 
 if __name__ == "__main__":
+    env1 = os.getenv("ENV1")
+    print('ENV1', env1)
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
