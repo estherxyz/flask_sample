@@ -1,5 +1,5 @@
 import pytest
-from sample.main import app
+from sample.app import app
 
 
 ### do not use fixture

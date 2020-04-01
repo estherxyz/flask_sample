@@ -1,5 +1,5 @@
 import pytest
-from sample.main import app
+from sample.app import app
 
 
 def test_hello_success(test_client):
