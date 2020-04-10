@@ -1,5 +1,7 @@
 flask
 pytest
+pytest-html
+pytest-cov
 python-dotenv
 requests
 
